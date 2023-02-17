@@ -14,7 +14,27 @@
 5. db.users.count()  
 ![image](https://user-images.githubusercontent.com/72013308/219765773-d71b70f2-13df-4eec-a9a6-123710a0aec7.png)  
   
-6.
+6. db.users.find({username:"jones"})  
+![image](https://user-images.githubusercontent.com/72013308/219767120-1a29e5c8-5adf-4945-99f0-de11d947323b.png)  
+  
+7. db.users.update({username:"smith"}, {$set:{country:"canada"}})  
+![image](https://user-images.githubusercontent.com/72013308/219767325-dc4ebec3-23d1-48dd-a00c-ce971235548c.png)  
+  
+8. db.users.update({username:"smith"}, {$set:{favorities:{cities:["chicago", "rome"],movies:["matrix", "the sting"]}}})  
+![image](https://user-images.githubusercontent.com/72013308/219768749-f1835294-b1da-4226-a5ff-1097ab4b3d10.png)  
+  
+9. db.users.update({username:"smith"}, {$unset:{country:1}})  
+![image](https://user-images.githubusercontent.com/72013308/219769137-63158133-8708-4591-bc17-de46c69fb9d1.png)  
+  
+10. db.users.update({username:"jones"}, {$set:{favorities:{movies:["rocky", "winter"]}}})  
+![image](https://user-images.githubusercontent.com/72013308/219769496-02704991-3a81-4e75-bb5a-882773f3d437.png)  
+  
+11. 
+
+
+
+
+
 
 
 
