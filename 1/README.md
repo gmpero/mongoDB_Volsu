@@ -8,8 +8,9 @@
 ![image](https://user-images.githubusercontent.com/72013308/219761172-963ac7d4-40a8-4949-b563-5bf7412929a3.png)  
   
 4. db.users.save({username:"smith"}) (Данный метод устарел)  
-![image](https://user-images.githubusercontent.com/72013308/219765466-9ddbf4f6-401b-49d1-95aa-25eecd1a0fee.png)  
+![image](https://user-images.githubusercontent.com/72013308/219765466-9ddbf4f6-401b-49d1-95aa-25eecd1a0fee.png)
 // https://www.mongodb.com/docs/v4.4/reference/method/db.collection.save/  
+![image](https://user-images.githubusercontent.com/72013308/219776042-0079d086-b025-4e7b-86f7-24895d387b3a.png)  
   
 5. db.users.count()  
 ![image](https://user-images.githubusercontent.com/72013308/219765773-d71b70f2-13df-4eec-a9a6-123710a0aec7.png)  
@@ -29,7 +30,8 @@
 10. db.users.update({username:"jones"}, {$set:{favorities:{movies:["rocky", "winter"]}}})  
 ![image](https://user-images.githubusercontent.com/72013308/219769496-02704991-3a81-4e75-bb5a-882773f3d437.png)  
   
-11. 
+11. db.users.find({"favorities.movies":"matrix"})  
+
 
 
 
