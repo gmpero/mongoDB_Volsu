@@ -157,4 +157,37 @@ for(i=0; i<200000; i++){db.number.insertOne({num:i});}
 50. db.profile.drop()
 ![image](https://user-images.githubusercontent.com/72013308/219845981-930368f4-0ee7-4756-a42e-1f2c58771e22.png)
   
-51.
+51. db.users.find({username:"tom"}, {languages:{$slice:1}})  
+![image](https://user-images.githubusercontent.com/72013308/219846225-8d689c5d-78e2-4ebe-985d-87502ac8dc3d.png)
+  
+52. db.users.find({username:"tom"}, {languages:{$slice:[-1,1]}})
+![image](https://user-images.githubusercontent.com/72013308/219846265-b4942ba3-cba0-4298-9320-1ff1da7c6460.png)
+  
+53. db.users.find({age:{$ne:22}})  
+![image](https://user-images.githubusercontent.com/72013308/219846335-e6c39209-b378-44d6-8e5e-def6f491ab74.png)
+![image](https://user-images.githubusercontent.com/72013308/219846356-a28224cc-213b-4aa0-8b16-a10dcfac7ec2.png)
+![image](https://user-images.githubusercontent.com/72013308/219846371-6672eb97-1a70-4582-b943-9f076d28b96e.png)
+  
+54. db.users.find({age:{$in:[22, 32]}})  
+![image](https://user-images.githubusercontent.com/72013308/219846407-4c018ae6-8a98-494a-b8df-970392acfb02.png)
+  
+55. db.users.find({age:{$nin:[22, 32]}})
+![image](https://user-images.githubusercontent.com/72013308/219846454-125496ff-5e05-4812-b58a-2afc0eb5cd16.png)
+![image](https://user-images.githubusercontent.com/72013308/219846470-71a0d498-ab28-44ac-8665-893b54491d08.png)
+  
+56. db.users.find({languages:{$all:["english", "french"]}})  
+![image](https://user-images.githubusercontent.com/72013308/219846507-5bb20ec1-f3e0-4aa8-ac70-88621be3d026.png)
+  
+57. db.users.find({$or:[{username:"tom"}, {age:22}]})  
+![image](https://user-images.githubusercontent.com/72013308/219846533-bdf2fcf4-cc82-401c-a211-e03f4e5ace00.png)
+  
+58. db.users.find({username:"tom", $or:[{age:22}, {languages:"german"}]})  
+![image](https://user-images.githubusercontent.com/72013308/219846622-d7bc9ea7-3811-48b6-ba7e-4d25fe14ed12.png)
+  
+59. db.users.find({languages:{$size:2}})
+![image](https://user-images.githubusercontent.com/72013308/219846640-1b7b38b8-0ff4-4642-b196-0a9e5e56de94.png)
+  
+60. db.users.find({company:{$exists:true}})
+![image](https://user-images.githubusercontent.com/72013308/219846658-2e0aae85-3de0-45df-8e0a-ddd2f28ddf6e.png)
+  
+61.
