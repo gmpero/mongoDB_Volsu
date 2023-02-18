@@ -93,7 +93,40 @@ for(i=0; i<200000; i++){db.number.insertOne({num:i});}
 30. db.users.insert({username:"tom", age:32, languages:["english"]})  
 ![image](https://user-images.githubusercontent.com/72013308/219844192-ebb7c8ab-c235-4458-9ddd-7d99c554242b.png)
   
-31.
+31. db.users.find({username:"tom"})  
+![image](https://user-images.githubusercontent.com/72013308/219844968-a9a2a83b-7e8c-474c-8e33-f00fbb94433b.png)
+  
+32. db.users.find({languages:"german"})  
+![image](https://user-images.githubusercontent.com/72013308/219845001-b302246c-3503-46f8-bea0-b1d630c946e8.png)
+  
+33. db.users.find({username:"tom", age:32})  
+![image](https://user-images.githubusercontent.com/72013308/219845023-013b6ade-485c-478c-92c2-103dff7e4766.png)
+  
+34. db.users.find({username:"tom"}, {age:1})  
+![image](https://user-images.githubusercontent.com/72013308/219845059-ec15c096-1ba3-4b2b-9931-ada8866d9348.png)
+  
+35. db.users.find({username:"tom"}, {age:true, _id:false})  
+![image](https://user-images.githubusercontent.com/72013308/219845120-58be687b-b6b9-47d1-90c5-20aa38d57a64.png)
+  
+36. db.users.insert({username:"alex", age:28, company:{name:"microsoft", country:"usa"}})  
+![image](https://user-images.githubusercontent.com/72013308/219845152-c9d76be8-2dcc-44fc-b0a3-4af0cb63ccc7.png)
+  
+37. db.users.find().limit(3)  
+![image](https://user-images.githubusercontent.com/72013308/219845181-aa073e25-b33a-4d3c-b7de-077e8788a8fe.png)
+![image](https://user-images.githubusercontent.com/72013308/219845244-da7e043d-fcaa-4399-90f8-e27a5b6b9683.png)
+  
+38. db.users.find().skip(2)  
+![image](https://user-images.githubusercontent.com/72013308/219845278-639c0ae2-1616-414e-9ab7-ac09fb41565e.png)
+![image](https://user-images.githubusercontent.com/72013308/219845285-b8279466-67e4-4953-8dff-5e0813893ae8.png)
+  
+39. db.users.find().sort({username:1})  
+![image](https://user-images.githubusercontent.com/72013308/219845352-e57eef90-462c-4a16-822e-cae8d29d5162.png)
+![image](https://user-images.githubusercontent.com/72013308/219845364-0b23ffe1-b7be-4b3a-8168-2d475bc61d04.png)
+![image](https://user-images.githubusercontent.com/72013308/219845385-7ed2a2fe-26d9-47b1-8dfa-53693f5d78d4.png)
+  
+40. db.users.find().sort({username:1}).skip(1).limit(2)  
+![image](https://user-images.githubusercontent.com/72013308/219845419-24311897-01e6-4eb2-a229-1271fd9d886a.png)
+
 
 
 
