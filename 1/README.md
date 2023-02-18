@@ -190,4 +190,35 @@ for(i=0; i<200000; i++){db.number.insertOne({num:i});}
 60. db.users.find({company:{$exists:true}})
 ![image](https://user-images.githubusercontent.com/72013308/219846658-2e0aae85-3de0-45df-8e0a-ddd2f28ddf6e.png)
   
-61.
+61. db.users.find({username:{$regex:"^b"}})
+![image](https://user-images.githubusercontent.com/72013308/219846843-1143f429-2435-412e-814f-d5b199ce3148.png)
+  
+62. db.users.save({username:"eugene", age:29, languages:["english", "spanish", "french"]}) // устарел
+db.users.insertOne({username:"eugene", age:29, languages:["english", "spanish", "french"]})
+![image](https://user-images.githubusercontent.com/72013308/219846920-b54beca7-7e0c-4fc8-9164-828328d28b1e.png)
+  
+63. db.users.update({username:"tom"}, {$set:{username:"tom", age:25, married:false}}, {upsert:true})  
+![image](https://user-images.githubusercontent.com/72013308/219847284-652b7b65-b152-4af1-842f-53e70e32bbb4.png)
+  
+64. db.users.update({username:"eugene", age:29}, {$set:{age:30}})  
+![image](https://user-images.githubusercontent.com/72013308/219847311-ccaa3fec-cc28-42c2-875c-855e47cced62.png)
+  
+65. db.users.update({username:"tom"}, {$set:{username:"tom", age:25, married:false}}, {multi:true})
+![image](https://user-images.githubusercontent.com/72013308/219847334-fdf0ddd9-8e1f-4921-94f6-f8c019c11248.png)
+  
+66. db.users.update({username:"tom"}, {$inc:{salary:100}})
+![image](https://user-images.githubusercontent.com/72013308/219847353-b6486322-92f2-4cf7-a90b-7c4244763c7e.png)
+  
+67. db.users.update({username:"tom"}, {$unset:{salary:1}})
+![image](https://user-images.githubusercontent.com/72013308/219847372-35ad6cd4-0ac5-4266-8449-92f4b37b1e1f.png)
+  
+68. db.users.update({username:"tom"}, {$unset:{salary:1, age:1}})
+![image](https://user-images.githubusercontent.com/72013308/219847391-c2f1cdcf-3e27-40d4-876f-dde0e1439790.png)
+  
+69. db.users.update({username:"tom"}, {$addToSet:{languages:"spanish"}})
+![image](https://user-images.githubusercontent.com/72013308/219847412-5989ce23-2552-467e-846b-5b2c1363c354.png)
+  
+70. db.users.update({username:"tom"}, {$addToSet:{languages:{$each:["russian", "italian"]}}})  
+![image](https://user-images.githubusercontent.com/72013308/219847432-0bc8373e-b7cb-4e0a-a121-f81a7ae26877.png)
+  
+71.
