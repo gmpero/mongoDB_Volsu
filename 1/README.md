@@ -126,7 +126,35 @@ for(i=0; i<200000; i++){db.number.insertOne({num:i});}
   
 40. db.users.find().sort({username:1}).skip(1).limit(2)  
 ![image](https://user-images.githubusercontent.com/72013308/219845419-24311897-01e6-4eb2-a229-1271fd9d886a.png)
-
-
-
-
+  
+41. db.users.find().sort({$natural:-1}).limit  
+![image](https://user-images.githubusercontent.com/72013308/219845691-84ad13ad-067a-432a-86cd-e85cba3f31ab.png)
+  
+42. db.users.find({username:"tom"}, {languages:{$slice:1}})  
+![image](https://user-images.githubusercontent.com/72013308/219845735-e92b8c56-bfcd-4998-b05a-d79dabc9b831.png)
+  
+43. db.users.find({username:"tom"}, {languages:{$slice:[-1,1]}})  
+![image](https://user-images.githubusercontent.com/72013308/219845773-e95db6f7-eb47-481b-b885-21c4be1e8db9.png)
+  
+44. db.users.find({}, {username:1})
+![image](https://user-images.githubusercontent.com/72013308/219845797-410a31df-8bd3-4e65-b367-ffff8e8d3806.png)
+  
+45. db.users.find({},{username:1})   //???????????????
+![image](https://user-images.githubusercontent.com/72013308/219845836-f37315fd-ef39-4aea-a233-d3a65f019cb5.png)
+  
+46. db.users.find({username:"tom"}).count()  
+![image](https://user-images.githubusercontent.com/72013308/219845862-b76f67b2-496e-4058-ab8c-c27d413256f4.png)
+  
+47. db.users.find({username:"tom"}).skip(2).count(true)
+![image](https://user-images.githubusercontent.com/72013308/219845891-debe81ed-4eee-4c1f-8de9-c325c579f023.png)
+  
+48. db.users.distinct("username")
+![image](https://user-images.githubusercontent.com/72013308/219845916-da07b541-6db5-4cbe-b82d-4f65434322f9.png)
+  
+49. db.profile.remove({})  
+![image](https://user-images.githubusercontent.com/72013308/219845953-f9bad8cb-a467-4485-90e2-55f630056c4a.png)
+  
+50. db.profile.drop()
+![image](https://user-images.githubusercontent.com/72013308/219845981-930368f4-0ee7-4756-a42e-1f2c58771e22.png)
+  
+51.
