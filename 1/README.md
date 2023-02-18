@@ -221,4 +221,17 @@ db.users.insertOne({username:"eugene", age:29, languages:["english", "spanish", 
 70. db.users.update({username:"tom"}, {$addToSet:{languages:{$each:["russian", "italian"]}}})  
 ![image](https://user-images.githubusercontent.com/72013308/219847432-0bc8373e-b7cb-4e0a-a121-f81a7ae26877.png)
   
-71.
+71. db.users.update({username:"tom"}, {$pop:{languages:-1}})
+![image](https://user-images.githubusercontent.com/72013308/219847734-dbb7f505-0622-4812-9212-fd1d9d202748.png)
+  
+72. db.users.update({username:"tom"}, {$pull:{languages:"russian"}})  
+![image](https://user-images.githubusercontent.com/72013308/219847752-ee141e2e-8327-4d30-ae05-8cfbbb3dbd07.png)
+  
+73. db.users.update({username:"tom"}, {$pullAll:{languages:["english", "french", "german"]}})
+![image](https://user-images.githubusercontent.com/72013308/219847764-c49f7840-1279-4e45-80e8-8c2b2a4253d4.png)
+  
+74. db.users.remove({age:{$lt:30}})
+![image](https://user-images.githubusercontent.com/72013308/219847777-a925dded-f499-4e63-82f4-8bbbc5172142.png)
+  
+75. db.users.remove({username:"tom"}, true)
+![image](https://user-images.githubusercontent.com/72013308/219847796-c31061f7-e7b8-47e8-979b-77fe7ae1e44b.png)
