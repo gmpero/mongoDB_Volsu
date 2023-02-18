@@ -63,20 +63,37 @@ for(i=0; i<200000; i++){db.number.insertOne({num:i});}
 20. db.number.createIndex({num:1});     db.number.getIndexes();  // проверить поиск с индексом  
 ![image](https://user-images.githubusercontent.com/72013308/219787020-c99406e4-3dda-4042-b5b7-71e055e8b4f6.png)
   
-21. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+21. show dbs  
+![image](https://user-images.githubusercontent.com/72013308/219843906-a7305a85-cdb2-4cb7-893c-f5fd7cca6144.png)
   
+22. show collections  
+![image](https://user-images.githubusercontent.com/72013308/219843933-7f8293cf-4328-4a15-a20e-9e93faa4f863.png)
+  
+23. db.stats()  
+![image](https://user-images.githubusercontent.com/72013308/219843950-18e35575-53fe-498b-8a82-2490f9309d2e.png)
+  
+24. db.help()
+![image](https://user-images.githubusercontent.com/72013308/219843991-f2b769bd-c077-4010-a64d-4f76e6a12948.png)
+  
+25. db.users.help()  
+![image](https://user-images.githubusercontent.com/72013308/219844036-525eafd4-70da-4adf-91de-3e4f83ec24b4.png)
+  
+26. db.number.save
+![image](https://user-images.githubusercontent.com/72013308/219844054-6f19aea2-6722-4324-b7f8-d55deb4238dd.png)
+  
+27. db.users.insert({username:"tom", age:28, languages:["english", "german"]})  
+![image](https://user-images.githubusercontent.com/72013308/219844109-b17c2015-92c0-4b8b-a294-ece71793c687.png)
+  
+28. document=({username:"bill", age:32, languages:["english", "french"]});   db.users.insert(document)  
+![image](https://user-images.githubusercontent.com/72013308/219844153-aac839ba-5f7e-41fc-8a46-a5d806df2643.png)
+  
+29. db.createCollection("profile", {capped:true, size:500, max:150})  
+![image](https://user-images.githubusercontent.com/72013308/219844175-e5485734-7a6b-4038-984f-3b0f6101d35d.png)
+  
+30. db.users.insert({username:"tom", age:32, languages:["english"]})  
+![image](https://user-images.githubusercontent.com/72013308/219844192-ebb7c8ab-c235-4458-9ddd-7d99c554242b.png)
+  
+31.
+
+
 
