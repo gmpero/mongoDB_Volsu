@@ -25,7 +25,7 @@ db.reviews.find().sort({likes:1}) -- по возрастанию лайков
 ![image](https://user-images.githubusercontent.com/72013308/229284815-833c6e89-5afc-40d6-913d-134f5a7cbab0.png)  
   
 -- 8. Найти всех пользователей, проживающих в Верхнем Манхэттене.  
-db.users.find({"addresses":{$elemMatch:{name:"home", street: "Таймс Сквер"}}})   
+db.users.find({"addresses":{$elemMatch:{street: "Таймс Сквер"}}})   
 ![image](https://user-images.githubusercontent.com/72013308/229284886-af250c0a-4b3b-4a25-969b-dbd102c77bf5.png)  
   
 -- 10. Построить составной индекс по артикулу и дате покупки
