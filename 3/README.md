@@ -91,19 +91,6 @@ db.reviews.find().sort({$natural:-1}).limit(5)
 -- 25. Пропустить первые 24 отзыва и возвратить не более 12 отзывов.  
 db.reviews.find().sort({$natural:1}).skip(24).limit(12)  
   
--- 26. Подсчитать общее число голосов, отданных за все отзывы одного пользователя, а также усреднить число голосов по всем отзывам каждого пользователя.  
-db.reviews.aggregate([
-    {$group:{_id: "user_id", total: {$sum: "$likes"}, average:{$avg:'$likes'}}}
-])  
-![image](https://user-images.githubusercontent.com/72013308/229285458-59b1b97c-3b33-4731-990e-922487f2e232.png)  
-  
--- 27. Получить статистику по продажам. Сколько товаров продано в каждом месяце?  
-db.orders.aggregate([
-    {$unwind:"$lines_items"}, 
-    {$group: {_id:{$month: "$order_date"}, quantity: {$sum:1}, item:{$addToSet:"$_id"}}}
-])  
-![image](https://user-images.githubusercontent.com/72013308/229285481-cab86e32-5f90-4263-a370-81d659226025.png)
-  
 -- 28. Найти отзыв, за который подано наибольшее число голосов.  
 db.reviews.find().sort({likes:-1}).limit(1)  
 ![image](https://user-images.githubusercontent.com/72013308/229285508-7a93a12f-3457-4f38-9d52-6c878b7e37b7.png)  
