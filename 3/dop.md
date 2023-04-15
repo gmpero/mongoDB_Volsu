@@ -6,6 +6,7 @@ for(i=0; i<docAr.length; i++){
 ![image](https://user-images.githubusercontent.com/72013308/232196216-d1050e7e-b8a4-420e-ac81-d51c6d4c9cf9.png)
 
 // 9. Сгруппировать пользователей по приобретаемым ими товарам, ограничить результирующий набор заказами, сделанными в определенный период времени  
+  
 db.orders.aggregate([  
     {$unwind: "$lines_items"},  
     {$project: {lines_items:1, _id:1, user_id:1, sub_total:1, order_date:1}},  
