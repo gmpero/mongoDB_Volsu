@@ -19,9 +19,9 @@ db.orders.aggregate([
 а также усреднить число голосов по всем отзывам каждого пользователя. ??  
   
 db.reviews.aggregate([  
-    {$group:{_id: "user_id", total: {$sum: "$likes"}, average:{$avg:'$likes'}}}  
+    {$group:{_id: "$user_id", total: {$sum: "$likes"}, average:{$avg:'$likes'}}}  
 ])  
-![image](https://user-images.githubusercontent.com/72013308/232200386-3a4ad24a-e82d-483c-b5c5-f636704d0fbd.png)  
+![image](https://user-images.githubusercontent.com/72013308/232207938-47e87139-7f37-4199-95c4-76e0be7cf8c4.png)   
   
 // 27. Получить статистику по продажам. Сколько товаров продано в каждом месяце?  
   
