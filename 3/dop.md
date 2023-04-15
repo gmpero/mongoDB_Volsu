@@ -33,7 +33,7 @@ db.orders.aggregate([
   
 // 30. Отобрать различные теги для товаров из категории «Садовые инструменты»  
   
-doc = db.categories.findOne({name:"Gardering Tools"}, {_id:true})  
+doc = db.categories.findOne({name:"Все для сада и огорода"}, {_id:true})  
 db.products.distinct("tags", {$or:[{"main_cat_id":doc['_id']}, {"categories_ids":doc['_id']}]})  
 ![image](https://user-images.githubusercontent.com/72013308/232197258-8daeb7d8-5f35-4973-8fce-f128f7cdb74b.png)
 
