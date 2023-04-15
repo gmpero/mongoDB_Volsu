@@ -13,4 +13,20 @@ db.orders.aggregate([
     {$match:{order_date:{$gt: new Date("2023-01-01"), $lt: new Date("2024-01-01")}}},  
     {$group: {_id:"$user_id", total: {$sum: "$sub_total"}, item:{$addToSet:"$lines_items"}}}  
 ])  
-![image](https://user-images.githubusercontent.com/72013308/232196789-71ad627a-5036-40fd-bbb6-7cbc0d5acd09.png)
+![image](https://user-images.githubusercontent.com/72013308/232196789-71ad627a-5036-40fd-bbb6-7cbc0d5acd09.png)  
+  
+// 27. Получить статистику по продажам. Сколько товаров продано в каждом месяце?  
+  
+db.orders.aggregate([  
+    {$unwind:"$lines_items"},  
+    {$group: {_id:{$month: "$order_date"}, quantity: {$sum: "$lines_items.quantity"}, item:{$addToSet:"$_id"}}}  
+])  
+![image](https://user-images.githubusercontent.com/72013308/232197115-b3346201-8e04-4377-b7b5-716c4ee1028a.png)  
+  
+// 30. Отобрать различные теги для товаров из категории «Садовые инструменты»  
+  
+doc = db.categories.findOne({name:"Gardering Tools"}, {_id:true})  
+db.products.distinct("tags", {$or:[{"main_cat_id":doc['_id']}, {"categories_ids":doc['_id']}]})  
+![image](https://user-images.githubusercontent.com/72013308/232197258-8daeb7d8-5f35-4973-8fce-f128f7cdb74b.png)
+
+
