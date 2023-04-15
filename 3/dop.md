@@ -15,6 +15,14 @@ db.orders.aggregate([
 ])  
 ![image](https://user-images.githubusercontent.com/72013308/232196789-71ad627a-5036-40fd-bbb6-7cbc0d5acd09.png)  
   
+26.Подсчитать общее число голосов, отданных за все отзывы одного пользователя,  
+а также усреднить число голосов по всем отзывам каждого пользователя. ??  
+  
+db.reviews.aggregate([  
+    {$group:{_id: "user_id", total: {$sum: "$likes"}, average:{$avg:'$likes'}}}  
+])  
+![image](https://user-images.githubusercontent.com/72013308/232200386-3a4ad24a-e82d-483c-b5c5-f636704d0fbd.png)  
+  
 // 27. Получить статистику по продажам. Сколько товаров продано в каждом месяце?  
   
 db.orders.aggregate([  
